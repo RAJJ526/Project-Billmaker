@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1 class="text-center">Raj's Bar</h1>
+    <div class="container">
+        <div class="card">
+            <div class="card-header bg-black"></div>
+            <div class="card-body">
+          
+              <div class="container">
+                <div class="row">
+                  <div class="col-xl-12">
+                    <i class="far fa-building text-danger fa-6x float-start"></i>
+                  </div>
+                </div>
+          
+          
+                <div class="row">
+                  <div class="col-xl-12">
+          
+                    <ul class="list-unstyled float-end">
+                      <li style="font-size: 30px; color: red;">Raj Group of Companies</li>
+                      <li>sector 57, mohali</li>
+                      <li>near cp-67 mall</li>
+                      <li>rajk81650@gmail.com</li>
+                    </ul>
+                  </div>
+                </div>
+          
+               
+          <form action="{% url 'pdf' %}" method="post">
+            
+            {% csrf_token %}
+            <div class="row text-center">
+                <h3 class="text-uppercase text-center mt-3" style="font-size: 40px;">Invoice / Bill</h3>
+
+                <p>Customer Name: <input type='text' name='name'></p>
+                <p>Mobile No: <input type='number' name='mobile_no'></p>
+              </div>
+                <div class="row mx-3">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Description</th>
+                        <th scope="col">Amount/Piece</th>
+                        <th scope="col">Quantity</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Coke</td>
+                        <td><i class="fas fa-dollar-sign"></i> 100</td>
+                        <td><input type="number" name="coke" class="" aria-label="" required></td>
+                      </tr>
+                      <tr>
+                        <td>Pepsi</td>
+                        <td><i class="fas fa-dollar-sign"></i> 80</td>
+                        <td><input type="number" name="pepsi" class="" aria-label="" required></td>
+                      </tr>
+                      <tr>
+                        <td>Fanta</td>
+                        <td><i class="fas fa-dollar-sign"></i> 70</td>
+                        <td><input type="number" name="fanta" class="" aria-label="" required></td>
+                      </tr>
+                      <tr>
+                        <td>Sprite</td>
+                        <td><i class="fas fa-dollar-sign"></i> 50</td>
+                        <td><input type="number" name="sprite" class="" aria-label="" required></td>
+                      </tr>
+                    </tbody>
+                  </table>
+          
+                </div>
+                <div class="row">
+                  <div class="col-xl-8">
+                   
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-xl-8" style="margin-left:60px">
+                    <p class="float-end"
+                      style="font-size: 30px; color: red; font-weight: 400;font-family: Arial, Helvetica, sans-serif;">
+                      Total:
+                      <span><i class="fas fa-dollar-sign"></i> </span></p>
+                  </div>
+                </div>
+        
+                <div class="row mt-2 mb-5">
+                  <p class="fw-bold">Date: <span class="text-muted"><input type="date" name="dt" class="" aria-label="" required></span></p>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">Receipt</button>
+            </form>
+              </div>
+          
+          
+          
+            </div>
+            <div class="card-footer bg-black"></div>
+          </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+  </body>
+</html>
